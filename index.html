@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Disease Detection</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#upload">Upload</a></li>
+            
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="home" class="home-section">
+        <h1><b>Welcome To Crop Disease Detection</b></h1>
+        <p>Save your healthy by discovering the diseases by choosing them and
+            Try to find out soolution of that dieases more
+        </p> 
+    </section>
+    <section id="upload">
+        <h1>Upload a leaf, let us diagnose!</h1>
+        <p>Upload an image of your plant, and our system will analyze it for possible diseases.
+            You’ll get detailed symptoms and recommended treatments.
+        </p>
+        {% comment %} <form id="uploadForm">
+            <input type="file" id="cropImage" accept="image/*" style="display: none;"> <!-- Hide the file input -->
+            <button type="button" onclick="openFileSelector()">Upload</button> <!-- Button triggers file selector -->
+        </form> {% endcomment %}
+        <form id="uploadForm" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" id="cropImage" accept="image/*" style="display: none;">
+            <button type="button" onclick="openFileSelector()">Upload</button>
+        </form>
+        <section id="result">
+            <p id="uploadMessage"></p>
+        </section>
+    </section>
+    
+    <section id="about">
+        <div class="about-section">
+            <div class="about-image">
+                <img src="/static/image.png" alt="Project image">
+            </div>
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p  class="justify-text">
+                Our Crop Disease Detection platform is designed 
+                to help farmers quickly identify and address diseases 
+                affecting their crops. By uploading a picture of a plant, 
+                users can receive insights on potential diseases and guidance 
+                on treatment options. This tool empowers farmers with easy 
+                access to information, promoting healthier crops and sustainable
+                farming.Using our platform is simple: farmers can take a picture 
+                of their crops, upload it to the system, and within seconds, our 
+                AI model will analyze the image to identify any potential diseases.
+                The results include the disease name, symptoms, and possible treatments.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <h2>Contact Us</h2>
+            <p>Email: cropcure@gmail.com</p>
+            <p>Phone: (862) 604-8783</p>
+            <p>“Preserving crops, preserving life.”</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com" target="_blank">Facebook</a> |
+                <a href="https://www.linkedin.com/in/pooja-nagapurkar-b389ab238?lipi=urn%3Ali%3Apage%3Ad_flagship3_messaging_conversation_detail%3BB6WwFHrfQSiUTMflzl0MFA%3D%3D" target="_blank">Linkedin</a> |
+                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+    <script src="/static/script2.js"></script>
+</body>
+</html>
+
+
+
